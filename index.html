@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <style type="text/css">
+        #input-account {
+            width: 27em;
+            margin-right: 1em;
+        }
+        #loading-indicator {
+            display: none;
+            margin-left: 1em;
+        }
+        #loading-indicator.loading {
+            display: inline-block;
+        }
+        body { margin: 2em; }
+    </style>
+    <title>EtherDelta token balances</title>
+  </head>
+  <body>
+    <h2>EtherDelta token balance checker</h2>
+    <br />
+    <p>
+        Lost track of your funds at EtherDelta? Worry not - just put in your address and this tool will return all amounts that address has deposited into the EtherDelta smart contract.
+    </p>
+    <p><em>Note that this only includes tokens officially listed at ED at the current moment. If you have deposited other tokens (such as DAT), these will not show up here.</em></p>
+    <p><em>Requires a modern browser (tested in Firefox 57.0.4)</em></p>
+    <p><a href="#">GitHub</a> | Donations: 0xE9573e5930E83613595d45F426E291e3AB74cB9a</p>
+    <form action="#" id="form-1" class="form form-inline">
+        <input type="text" class="form-control" placeholder="0x...." id="input-account"/>
+        <button class="btn btn-primary" id="button-start">Get balances</button>
+        <img src="spinner.gif" alt="Loading..." id="loading-indicator"/>
+    </form>
+    <br />
+    <table id="result-table" class="table">
+        <tr>
+            <th scope="column">Name</th>
+            <th scope="column">Address</th>
+            <th scope="column">Balance</th>
+            <th scope="column">Raw balance</th>
+        </tr>
+    </table>
+    <script src="https://unpkg.com/superagent/superagent.js"></script>
+    <script src="index.js"></script>
+  </body>
+</html>
